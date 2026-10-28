@@ -1,0 +1,37 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+int lowestcommonFctor(int num1, int num2);
+int greatestcommonFactor(int num1, int num2);
+int num1, num2, lcm;
+int gcd = 1;
+int main()
+{
+
+    cout << "Enter First no: ";
+    cin >> num1;
+    cout << "Enter secomd no: ";
+    cin >> num2;
+    int highest = greatestcommonFactor(num1, num2);
+    int lowest = lowestcommonFctor(num1, num2);
+    cout << "GCD:" << highest << endl;
+    cout << "LCM: " << lowest << endl;
+    return 0;
+}
+int greatestcommonFactor(int num1, int num2)
+{
+int limit=min(num1,num2);
+    for (int i = 0; i <= limit; i++)
+    {
+        if (num1%i==0 && num2%i==0)
+            gcd = i;
+    }
+    return gcd;
+}
+int lowestcommonFctor(int num1, int num2)
+{
+    lcm = (num1 * num2) / gcd;
+    return lcm;
+}
+
+
